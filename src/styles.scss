@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/define';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// app
+body, html {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*text-align: center;*/
+  color: #2c3e50;
+}
+
+.btn{
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  &-border{
+    border-top-left-radius: 18px;
+    height: 36px;
+  }
+  &-toggle-add-task{
+    float: left;
+    width: 36px;
+    height: 50px;
+    border-top-left-radius: 0;
+    background: url("./assets/images/baseline-add-24px.svg") center center no-repeat;
+    text-indent: -9999px;
+    transition: all 500ms ease-in;
+    &.show{
+      border-radius: 25px;
+      transform: rotate(45deg);
+    }
+  }
+  &-delete-column{
+    background-image: url('./assets/images/baseline-delete-24px.svg') ;
+  }
+  &-add-column{
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top-left-radius: 25px;
+    background: $color-green url("./assets/images/baseline-playlist_add-24px.svg") center center no-repeat;
+    background-size: 20px;
+    text-indent: -9999px;
+  }
+}
+
+.column{
+  width: 350px;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 8px;
+  padding: 8px;
+  white-space: normal;
+}

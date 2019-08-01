@@ -1,0 +1,40 @@
+@import '../../../assets/scss/define';
+
+// form
+.btn-submit{
+  background-color: $color-green;
+  color: $color-white;
+}
+
+// wrap
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+.container{
+  position: relative;
+  height: 100vh;
+  background: #000;
+}
+.wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  /*padding-top: 36px;*/
+}
+

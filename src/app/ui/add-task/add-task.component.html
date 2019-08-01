@@ -1,0 +1,17 @@
+<div class="column">
+    <div class="relative full-height">
+      <input
+        type="text"
+        placeholder="Add new column"
+        class="column_title column_title-create"
+        v-model="newColumnTitle"
+        v-on:keyup.enter="handleAddColumn"
+      />
+      <button
+        class="btn btn-border btn-add-column"
+        v-on:click="handleAddColumn"
+      >
+        add column
+      </button>
+    </div>
+  </div>

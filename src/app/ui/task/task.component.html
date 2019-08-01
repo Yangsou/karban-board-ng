@@ -1,0 +1,20 @@
+<div
+    class="task"
+    draggable="true"
+    v-on:dragstart="handleDragTask"
+  >
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <button
+      class="btn btn-border btn-create"
+      v-on:click="handleClickEdit(task.id, columnID)"
+    >
+      click
+    </button>
+    <button
+      class="btn btn-border btn-delete-task"
+      v-on:click="handleDeleteTask(task.id, columnID)"
+    >
+      click
+    </button>
+  </div>

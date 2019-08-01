@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="wrap">
+      <div
+        v-for="column in columns"
+        v-bind:key="column.id"
+        class="column"
+      >
+        <app-column
+          :column="column"
+          :handleAddTask="handleAddTask"
+          :handleDragTaskEnd="handleDragTaskEnd"
+          :handleClickEdit="handleClickEdit"
+          :handleDeleteColumn="handleDeleteColumn"
+          :handleDeleteTask="handleDeleteTask"
+        ></app-column>
+      </div>
+      <app-add-task></app-add-task>
+    </div>
+    <!-- <div class="dialog" v-if="showForm">
+      <div class="dialog_container">
+        <FormTask
+          :task="taskEdit"
+          :handleSubmit="handleSubmit"
+          :handleCloseDialog="handleCloseDialog"
+        ></FormTask>
+      </div>
+    </div> -->
+  </div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.state';
+import * as TodoActions from '../../action/column.action';
+import { generateUnitKey } from 'src/app/helpers/stringer';
 
 @Component({
   selector: 'app-add-task',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTaskComponent implements OnInit {
 
-  constructor() { }
+  newColumnTitle: string;
+
+  constructor(private store: Store<AppState>) { }
+
+
+  async handleAddColumn() {
+    await this.store.dispatch({
+      type: TodoActions.ADD_COLUMN,
+      payload: {
+        id: generateUnitKey(),
+        title: this.newColumnTitle,
+        columns: []
+      }
+    });
+    this.newColumnTitle = '';
+  }
 
   ngOnInit() {
   }
-
 }

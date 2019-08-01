@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IColumn } from 'src/app/models/task';
 
 @Component({
@@ -6,15 +6,18 @@ import { IColumn } from 'src/app/models/task';
   templateUrl: './column.component.html',
   styleUrls: ['./column.component.scss']
 })
-export class ColumnComponent implements OnInit {
-  column: IColumn;
-  constructor() { }
-
-  ngOnInit() {
-    this.column = {
-      id: 22,
-      title: 'column'
-    };
-  }
+export class ColumnComponent {
+  private ownColumn: IColumn = {
+    id: null,
+    tasks: [],
+    title: ''
+  };
+  @Input() column: IColumn;
+  // set column(column: IColumn) {
+  //   this.ownColumn = column;
+  // }
+  // get column() {
+  //   return this.ownColumn;
+  // }
 
 }

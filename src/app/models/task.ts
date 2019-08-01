@@ -5,6 +5,11 @@ export interface ITask {
 }
 
 export interface IColumn {
-  id: number;
+  id: number | string;
   title: string;
+  tasks: ITask[];
+}
+
+export interface ITodoState {
+  columns: IColumn[];
 }

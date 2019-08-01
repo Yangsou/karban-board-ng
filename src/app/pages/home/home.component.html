@@ -1,18 +1,17 @@
 <div class="container">
     <div class="wrap">
       <div
-        v-for="column in columns"
-        v-bind:key="column.id"
+        *ngFor="let column of columns | async"
         class="column"
       >
         <app-column
-          :column="column"
-          :handleAddTask="handleAddTask"
+          [column]="column"
+          ></app-column>
+          <!-- :handleAddTask="handleAddTask"
           :handleDragTaskEnd="handleDragTaskEnd"
           :handleClickEdit="handleClickEdit"
           :handleDeleteColumn="handleDeleteColumn"
-          :handleDeleteTask="handleDeleteTask"
-        ></app-column>
+          :handleDeleteTask="handleDeleteTask" -->
       </div>
       <app-add-task></app-add-task>
     </div>

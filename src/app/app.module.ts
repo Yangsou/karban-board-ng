@@ -12,6 +12,7 @@ import { AddTaskComponent } from './ui/add-task/add-task.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducer/column.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
     AddTaskComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({

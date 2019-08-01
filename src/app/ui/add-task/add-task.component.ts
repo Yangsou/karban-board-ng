@@ -11,7 +11,7 @@ import { generateUnitKey } from 'src/app/helpers/stringer';
 })
 export class AddTaskComponent implements OnInit {
 
-  newColumnTitle: string;
+  newColumnTitle = '';
 
   constructor(private store: Store<AppState>) { }
 
@@ -20,8 +20,8 @@ export class AddTaskComponent implements OnInit {
     await this.store.dispatch({
       type: TodoActions.ADD_COLUMN,
       payload: {
-        id: generateUnitKey(),
         title: this.newColumnTitle,
+        id: generateUnitKey(),
         columns: []
       }
     });

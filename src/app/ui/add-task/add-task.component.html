@@ -1,16 +1,22 @@
-<div class="column">
-    <div class="relative full-height">
-      <input
-        type="text"
-        placeholder="Add new column"
-        class="column_title column_title-create"
-        [(ngModel)]="newColumnTitle"
-        (keyup.enter)="handleAddColumn()"
-        />
-        <button
-        class="btn btn-border btn-add-column"
-        (click)="handleAddColumn()">add column</button>
-      </div>
-      <!-- [value]="newColumnTitle"
-      (input)="newColumnTitle = $event.target.value" -->
-  </div>
+<div
+  class="task column_create show">
+  <input
+    type="text"
+    placeholder="enter title"
+    class="column_create_title"
+    [(ngModel)]="task.title"
+    name="title"
+    ngDefaultControl
+  />
+  <textarea
+    placeholder="enter description"
+    class="column_create_description"
+    [(ngModel)]="task.description"
+    ngDefaultControl
+  ></textarea>
+  <button (click)="handleSubmit()" class="btn column_create_btn btn-submit">Save</button>
+  <button
+    v-on:click="handleCloseDialog"
+    class="btn column_create_btn"
+    *ngIf="isDialog">Cancel</button>
+</div>

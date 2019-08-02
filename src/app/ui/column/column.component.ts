@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IColumn } from 'src/app/models/task';
 
 @Component({
@@ -6,18 +6,16 @@ import { IColumn } from 'src/app/models/task';
   templateUrl: './column.component.html',
   styleUrls: ['./column.component.scss']
 })
-export class ColumnComponent {
-  private ownColumn: IColumn = {
-    id: null,
-    tasks: [],
-    title: ''
-  };
+export class ColumnComponent implements OnInit {
   @Input() column: IColumn;
-  // set column(column: IColumn) {
-  //   this.ownColumn = column;
-  // }
-  // get column() {
-  //   return this.ownColumn;
-  // }
 
+  showTaskForm = false;
+  constructor() {}
+
+  ngOnInit() {
+  }
+
+  public toggleAddTask() {
+    this.showTaskForm = !this.showTaskForm;
+  }
 }

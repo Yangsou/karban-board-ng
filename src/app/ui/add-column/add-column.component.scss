@@ -1,0 +1,34 @@
+@import '../../../assets/scss/define';
+
+.relative{
+  position: relative;
+  &-column{
+    height: 100%;
+  }
+}
+.full-height{
+  height: 100%;
+}
+
+.column_title{
+  padding: 8px;
+  height: 50px;
+  background: #f7f7f7;
+  &.done{
+    background: #4eb87c;
+    color: #fff;
+  }
+  &.doing{
+    background: #3d5a96;
+    color: #fff;
+  }
+  &.bug{
+    background: #e22222;
+    color: #fff;
+  }
+  &-create{
+    width: 100%;
+    font-size: 20px;
+    padding-right: 54px;
+  }
+}

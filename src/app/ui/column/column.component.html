@@ -7,10 +7,7 @@
       <button
         class="btn btn-toggle-add-task btn-border"
         v-bind:class="{show: showAddTask}"
-        v-on:click="toggleAddTask"
-      >
-        Add task
-      </button>
+        (click)="toggleAddTask()">Add task</button>
       <button
         class="btn btn-toggle-add-task btn-border btn-delete-column"
         v-on:click="handleDeleteColumn(column.id)"
@@ -26,40 +23,13 @@
         {{ column.title }}
       </h2>
       <div class="column_content">
-        <div
-          class="task column_create"
-          v-bind:class="{show: showAddTask}"
-        >
-          <input
-            type="text"
-            placeholder="enter title"
-            class="column_create_title"
-            v-model="newTitle"
-          />
-          <textarea
-            placeholder="enter description"
-            class="column_create_description"
-            v-model="newDescription"
-          >
-          </textarea>
-          <button
-            v-on:click="addTask"
-            class="btn column_create_btn"
-          >
-            Add
-          </button>
-        </div>
-        <div
-          v-for="task in column.tasks"
-          v-bind:key="task.id"
-        >
-          <app-task
-            :task="task"
-            :columnID="column.id"
-            :handleClickEdit="handleClickEdit"
-            :handleDeleteTask="handleDeleteTask"
-          ></app-task>
-        </div>
+        <app-add-task *ngIf="showTaskForm" [columnId]="column.id" [isDialog]="false"></app-add-task>
+        <app-task
+          *ngFor="let task of column.tasks"
+          [task]="task"
+          [columnId]="column.id"
+          :handleClickEdit="handleClickEdit"
+          :handleDeleteTask="handleDeleteTask"></app-task>
       </div>
     </div>
   </div>

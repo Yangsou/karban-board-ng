@@ -2,16 +2,8 @@
     <div class="wrap">
       <div
         *ngFor="let column of columns | async"
-        class="column"
-      >
-        <app-column
-          [column]="column"
-          ></app-column>
-          <!-- :handleAddTask="handleAddTask"
-          :handleDragTaskEnd="handleDragTaskEnd"
-          :handleClickEdit="handleClickEdit"
-          :handleDeleteColumn="handleDeleteColumn"
-          :handleDeleteTask="handleDeleteTask" -->
+        class="column">
+        <app-column [column]="column"></app-column>
       </div>
       <app-add-column></app-add-column>
     </div>

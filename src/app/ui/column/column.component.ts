@@ -7,7 +7,11 @@ import { IColumn } from 'src/app/models/task';
   styleUrls: ['./column.component.scss']
 })
 export class ColumnComponent implements OnInit {
-  @Input() column: IColumn;
+  @Input() column: IColumn = {
+    id: null,
+    tasks: [],
+    title: ''
+  };
 
   showTaskForm = false;
   constructor() {}

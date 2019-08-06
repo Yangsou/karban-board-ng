@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ITask } from 'src/app/models/task';
+import { ITask, defaultTask } from 'src/app/models/task';
 
 @Component({
   selector: 'app-task',
@@ -8,7 +8,7 @@ import { ITask } from 'src/app/models/task';
 })
 export class TaskComponent {
 
-  @Input() task: ITask;
+  @Input() task: ITask = defaultTask();
   @Input() columnId: number | string;
 
 }

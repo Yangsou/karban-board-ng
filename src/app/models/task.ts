@@ -14,3 +14,12 @@ export interface IColumn {
 export interface ITodoState {
   columns: IColumn[];
 }
+
+export const defaultTask = (): ITask => {
+  return {
+    columnId: null,
+    description: '',
+    id: null,
+    title: ''
+  };
+};

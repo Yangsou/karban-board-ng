@@ -18,7 +18,7 @@ export class AddTaskComponent {
     columnId: null
   };
   @Input() isDialog = true;
-  @Input() columnId: number | string;
+  @Input() columnId = null;
   constructor(private store: Store<AppState>) { }
 
   handleSubmit() {

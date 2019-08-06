@@ -12,7 +12,7 @@
     placeholder="enter description"
     class="column_create_description"
     [(ngModel)]="task.description"
-    ngDefaultControl
+    [ngModelOptions]="{standalone: true}"
   ></textarea>
   <button (click)="handleSubmit()" class="btn column_create_btn btn-submit">Save</button>
   <button

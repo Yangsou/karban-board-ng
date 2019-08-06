@@ -3,13 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoService } from './services/todo/todo.service';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TaskComponent } from './ui/task/task.component';
 import { ColumnComponent } from './ui/column/column.component';
 import { AddColumnComponent } from './ui/add-column/add-column.component';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, Store } from '@ngrx/store';
 import { reducer } from './reducer/column.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import { FormsModule } from '@angular/forms';
@@ -37,9 +36,12 @@ import { UiService } from './services/ui/ui.service';
       maxAge: 5
     })
   ],
+  exports: [
+    AddTaskComponent
+  ],
   providers: [
-    TodoService,
-    UiService
+    UiService,
+    Store
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddTaskComponent } from './add-task.component';
+import { FormsModule } from '@angular/forms';
+import { Store, StoreModule } from '@ngrx/store';
+import { reducer } from 'src/app/reducer/column.reducer';
 
 describe('AddTaskComponent', () => {
   let component: AddTaskComponent;
@@ -8,7 +11,18 @@ describe('AddTaskComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddTaskComponent ]
+      declarations: [
+        AddTaskComponent
+      ],
+      imports: [
+        FormsModule,
+        StoreModule.forRoot({
+          todo: reducer
+        }),
+      ],
+      providers: [
+        Store,
+      ]
     })
     .compileComponents();
   }));

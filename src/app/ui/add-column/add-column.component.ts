@@ -22,7 +22,7 @@ export class AddColumnComponent implements OnInit {
       payload: {
         title: this.newColumnTitle,
         id: generateUnitKey(),
-        columns: []
+        tasks: []
       }
     });
     this.newColumnTitle = '';
